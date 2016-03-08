@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main ()
+{
+	int P1, P2, P3, NP, NF, PROMEDIO;
+    cout<< "ingrese nota de primer parcial: ";
+	cin>> P1;
+	cout<< "ingrese nota del segundo parcial: ";
+	cin>> P2;
+	cout<< "ingrese nota del tercer pacial: ";
+	cin>> P3;
+	cout<< "ingrese nota practica: ";
+	cin>> NP;
+	cout<< "ingrese la nota examen final: ";
+	cin>> NF;
+	PROMEDIO=(((P1+P2+P3)/3)*0.4)+(NP*0.2)+(NF*0.4);
+	cout<< "la nota final es: " <<PROMEDIO;
+	getch(); 
+}
+
