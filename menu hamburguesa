@@ -1,0 +1,66 @@
+include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define H 3
+#define HQ 5
+#define P 2
+#define S 2.5
+
+using namespace std;
+
+void main ()
+{
+    int opcion,CH,CHQ,CP;
+	float Pr,PT,M,CS;
+	 M=0;
+	do {
+		 cout <<endl;
+		 cout << "1.- hamburguesa" << endl;
+		 cout << "2.- hamburguesa con queso" << endl;
+		 cout << "3.- papas fritas" << endl;
+		 cout << "4.- soda" << endl;
+		 cout << "0.- Salir" << endl;
+		 cout << "Elige una opción: " ;
+		 cin >> opcion;
+		 switch (opcion) {
+		case 1:
+			cout<< "ingrese la cantidad de hamburguesa: ";
+			cin>> CH;
+			Pr=CH*H; 
+			cout<< "el costo es: "<<Pr<<endl;
+			M=M+Pr;
+			break;
+	   
+		case 2:
+			cout<< "ingrese la cantidad de hamburguesa con queso: ";
+			cin>> CHQ;
+			Pr=CHQ*HQ; 
+			cout<< "el costo es: "<<Pr<<endl;
+			M=M+Pr;
+			break;
+	   
+		case 3:
+			cout<< "ingrese la cantidad de papas fritas: ";
+			cin>> CP;
+			Pr=CP*P; 
+			cout<< "el costo es: "<<Pr<<endl;
+			M=M+Pr;
+			break;
+
+	   
+		case 4:
+			cout<< "ingrese la cantidad de soda: ";
+			cin>> CS;
+			Pr=CS*S; 
+			cout<< "el costo es: "<<Pr<<endl;
+			M=M+Pr;
+			break;
+		
+		case 0: cout << "Salir:"<<endl;break;
+	    default: cout << "Opcion invalida" << endl;
+     }
+     
+	 } while (opcion != 0);
+	cout<< "el costo total es: "<<M<<endl;
+     getch();
+}
