@@ -1,0 +1,73 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+void cargar (double a[], int tam);
+void mostrar(double a[], int tam);
+double promedio(double a[], int tam);
+void burbuja(double a[],int tam);
+int busquedalineal(double a[],int b,int tam);
+void main()
+{
+	double vec[MAX],prom,k;
+	int tam,n,pos;
+	do
+	{
+		cout<<"ingrese el numero de elementos del vector:";
+		cin>>n;
+	}while ((0>=n)||(n>=100));
+	cargar(vec,n);
+	cout<<endl<<"ingrese el elemento a buscar:";
+	cin>>k;
+	pos=busquedalineal(vec,k,n);
+	if(pos==-1)
+		cout<<"el elemento esta en la posicion:"<<pos<<endl;
+	burbuja(vec,n);
+	mostrar(vec,n);
+	prom=promedio(vec,n);
+	cout<<"el promedio es:"<<prom<<endl;
+	getch();
+}
+double promedio(double a[],int tam)
+{
+	double suma=0;
+	for (int i=0;i<tam;i++)
+		suma=suma+a[i];
+
+	return suma/tam;
+}
+void cargar(double a[],int tam)
+{
+	for (int i=0;i<tam;i++)
+	{
+		cout<<"v["<<i<<"]="<<endl;
+		cin>>a[i];
+	}
+}
+	void mostrar (double a[],int tam)
+	{
+		for(int i=0;i<tam;i++)
+			cout<<"v["<<i<<"]="<<a[i]<<endl;
+	}
+
+
+void burbuja(double a[],int tam)
+{
+ for(int i = 0; i< tam - 1 ; i++)
+   for(int j = i; j< tam;j++)
+     if(a[i]>a[j]){
+       int temp = a[i];
+       a[i]=a[j];
+       a[j]=temp;
+    }
+}
+
+int busquedalineal(double a[],int b,int tam)
+{
+	for(int i=0;i<tam;i++)
+	if(a[i]==b)
+       return i;
+  return -1;
+}
